@@ -58,7 +58,7 @@ html {
 
 .select-ghost:focus,
 .select-ghost:focus-within {
-	background-color: transparent;
+	background-color: var(--creamy-white);
 	border-color: var(--soft-brown);
 	color: var(--soft-brown);
 	outline: none;

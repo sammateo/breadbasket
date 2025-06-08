@@ -33,6 +33,7 @@ const NewStorePopup = () => {
 
 						<select
 							defaultValue="Select a country"
+							name="Country"
 							className="select select-ghost w-full border-2 border-soft-brown rounded-lg"
 						>
 							<option value={"Select a country"} disabled={true}>
