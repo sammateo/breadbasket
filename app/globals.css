@@ -47,3 +47,19 @@ html {
 	background-color: var(--creamy-white);
 	color: var(--deep-charcoal);
 }
+
+.modal-box {
+	background-color: var(--creamy-white);
+	padding: 0;
+}
+.btn:hover {
+	--btn-bg: var(--fresh-olive);
+}
+
+.select-ghost:focus,
+.select-ghost:focus-within {
+	background-color: transparent;
+	border-color: var(--soft-brown);
+	color: var(--soft-brown);
+	outline: none;
+}
