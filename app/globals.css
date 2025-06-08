@@ -63,3 +63,9 @@ html {
 	color: var(--soft-brown);
 	outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-base-100: var(--creamy-white);
+	}
+}
