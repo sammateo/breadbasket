@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export const Landing = () => {
@@ -18,19 +19,19 @@ export const Landing = () => {
 					</p>
 
 					<div className="mt-4 flex flex-col md:flex-row justify-center gap-4 sm:mt-6">
-						<a
+						<Link
 							className="inline-block rounded-lg border border-fresh-olive bg-fresh-olive px-8 py-3 font-medium text-creamy-white shadow-sm transition-colors hover:bg-creamy-white hover:text-fresh-olive"
-							href="#"
+							href="/lists"
 						>
 							Get Started
-						</a>
+						</Link>
 
-						<a
+						<Link
 							className="inline-block rounded-lg border border-fresh-olive px-8 py-3 font-medium text-fresh-olive shadow-sm transition-colors hover:bg-fresh-olive hover:text-creamy-white"
-							href="#"
+							href="/items"
 						>
 							View Catalog
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

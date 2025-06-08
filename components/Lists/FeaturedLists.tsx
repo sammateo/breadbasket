@@ -3,8 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FeaturedListCard } from "./FeaturedListCard";
-export const FeaturedLists = () => {
-	const testLists: GroceryListDetails[] = [
+export const FeaturedLists = ({ featured }: { featured: boolean }) => {
+	let testLists: GroceryListDetails[] = [
 		{
 			id: "001",
 			user_id: "001",
@@ -90,18 +90,24 @@ export const FeaturedLists = () => {
 			],
 		},
 	];
+	if (featured) {
+		testLists = testLists.slice(0, 2);
+	}
 	return (
 		<div className="px-10 bg-creamy-white">
-			<div className="flex flex-col sm:flex-row items-center justify-between gap-y-2">
-				<h2 className="text-3xl font-bold">Grocery Lists</h2>
-				<Link
-					href={"/lists"}
-					className=" text-xl flex items-center gap-2"
-				>
-					See all
-					<FaArrowRightLong className="relative" />
-				</Link>
-			</div>
+			{featured && (
+				<div className="flex flex-col sm:flex-row items-center justify-between gap-y-2">
+					<h2 className="text-3xl font-bold">Grocery Lists</h2>
+					<Link
+						href={"/lists"}
+						className=" text-xl flex items-center gap-2"
+					>
+						See all
+						<FaArrowRightLong className="relative" />
+					</Link>
+				</div>
+			)}
+
 			<div className="grid md:grid-cols-2 gap-4 my-4">
 				{(!testLists || !testLists.length) && (
 					<div className="flex flex-col justify-center items-center gap-4">

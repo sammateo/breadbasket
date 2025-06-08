@@ -7,7 +7,7 @@ export default function Home() {
 		<div className="">
 			<NavigationBar />
 			<Landing />
-			<FeaturedLists />
+			<FeaturedLists featured={true} />
 		</div>
 	);
 }
