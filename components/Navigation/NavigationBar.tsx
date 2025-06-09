@@ -1,7 +1,10 @@
+import { auth0 } from "@/lib/auth0";
 import Link from "next/link";
 import React from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
-export const NavigationBar = () => {
+export const NavigationBar = async () => {
+	const session = await auth0.getSession();
+
 	const navigationItems = [
 		{
 			label: "Lists",
@@ -68,16 +71,21 @@ export const NavigationBar = () => {
 									{navItem.label}
 								</Link>
 							))}
-							<Link href={"/profile"}>
-								<MdOutlineAccountCircle className="text-3xl" />
-							</Link>
-							{/* Navbar menu content here
-							<li>
-								<a>Lists</a>
-							</li>
-							<li>
-								<a>Navbar Item 2</a>
-							</li> */}
+							{session && (
+								<div>
+									<Link href={"/profile"} className="">
+										<MdOutlineAccountCircle className="text-3xl" />
+									</Link>
+								</div>
+							)}
+							{!session && (
+								<Link
+									className="menu-item rounded-md text-lg px-2 py-1 hover:bg-warm-wheat hover:text-deep-charcoal"
+									href="/auth/login"
+								>
+									Login
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>
@@ -100,9 +108,24 @@ export const NavigationBar = () => {
 							{navItem.label}
 						</Link>
 					))}
-					<Link href={"/profile"}>
+					{session && (
+						<div>
+							<Link href={"/profile"} className="">
+								<MdOutlineAccountCircle className="text-3xl mx-auto w-full" />
+							</Link>
+						</div>
+					)}
+					{!session && (
+						<Link
+							className="drawer-menu-item py-2 hover:bg-warm-wheat hover:text-deep-charcoal"
+							href="/auth/login"
+						>
+							Login
+						</Link>
+					)}
+					{/* <Link href={"/profile"}>
 						<MdOutlineAccountCircle className="text-3xl mx-auto w-full" />
-					</Link>
+					</Link> */}
 				</div>
 			</div>
 		</div>

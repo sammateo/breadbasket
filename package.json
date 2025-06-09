@@ -9,6 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@auth0/nextjs-auth0": "^4.6.1",
 		"daisyui": "^5.0.43",
 		"next": "15.3.3",
 		"react": "^19.0.0",
