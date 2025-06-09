@@ -5,7 +5,7 @@ import { GroceryListDetails } from "@/lib/types/grocery_list";
 import { NewListButton, NewListPopup } from "./ListPopup";
 
 const GroceryLists = () => {
-	let testLists: GroceryListDetails[] = [
+	const testLists: GroceryListDetails[] = [
 		{
 			id: "001",
 			user_id: "001",
